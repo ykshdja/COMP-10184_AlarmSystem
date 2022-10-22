@@ -9,13 +9,13 @@
 // digital input pin definitions
 #define PIN_PIR D5
 #define PIN_BUTTON D6
-#define setLed(b) (digitalWrite(LED_BUILTIN,b?LOW:HIGH))
 #define TIME 100
 #define BLINK_NUM 40
 /**
  * Stage 1:
   When motion is detected, turn the LED on solid for 10 seconds, then turn it off and wait for another motion 
   event.
+  
  * 
 */
 
