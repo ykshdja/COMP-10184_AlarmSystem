@@ -17,6 +17,7 @@
  * Stage 1:
   When motion is detected, turn the LED on solid for 10 seconds, then turn it off and wait for another motion 
   event.
+  
  * 
 Stage 2:
  Like Stage 1, but instead of keeping the LED on solid, blink the LED for 10 seconds (4 blinks per second).
