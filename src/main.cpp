@@ -1,7 +1,6 @@
 /**
  * STATEMENT OF AUTHORSHIP - I YASH KHANDUJA, 000826385 HERE BY DECLARE THAT THIS IS MY OWN WORK.
- * Stage 1
- * Stage 2
+ Stage - 4
  * **/
 
   
@@ -154,21 +153,5 @@ void loop() {
          case disabled:
          break;
     }
-
-
-
-
-
-
-
-    // _SetLed_(false);
-    // bool detected = detectMotion();
-    // if(detected){
-    //     handleMotionDetection();
-    //     delay(TIME);
-    //     return;
-    // }
-    // setLed(true);
-    //      delay(100);
 
 }
