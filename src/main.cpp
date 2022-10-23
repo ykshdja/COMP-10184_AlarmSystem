@@ -1,6 +1,7 @@
 /**
  * STATEMENT OF AUTHORSHIP - I YASH KHANDUJA, 000826385 HERE BY DECLARE THAT THIS IS MY OWN WORK.
- * Stage 4
+ * Stage 1
+ * Stage 2
  * **/
 
   
@@ -119,7 +120,7 @@ void setup() {
   Serial.println();
   Serial.println();
   Serial.println("=========================================");
-  Serial.println("===ALARM SYSTEM - STAGE 4===");
+  Serial.println("---ALARM SYSTEM - STAGE 2---");
   Serial.println("Yash Khanduja, 000826385");
   Serial.println("=========================================");
  
@@ -153,4 +154,21 @@ void loop() {
          case disabled:
          break;
     }
+
+
+
+
+
+
+
+    // _SetLed_(false);
+    // bool detected = detectMotion();
+    // if(detected){
+    //     handleMotionDetection();
+    //     delay(TIME);
+    //     return;
+    // }
+    // setLed(true);
+    //      delay(100);
+
 }
