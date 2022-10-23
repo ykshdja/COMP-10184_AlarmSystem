@@ -128,20 +128,4 @@ void loop() {
 
     }
 
-
-
-
-
-
-
-    // _SetLed_(false);
-    // bool detected = detectMotion();
-    // if(detected){
-    //     handleMotionDetection();
-    //     delay(TIME);
-    //     return;
-    // }
-    // setLed(true);
-    //      delay(100);
-
 }
