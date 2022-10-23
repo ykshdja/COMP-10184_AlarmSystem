@@ -1,35 +1,15 @@
-/**
- * STATEMENT OF AUTHORSHIP - I YASH KHANDUJA, 000826385 HERE BY DECLARE THAT THIS IS MY OWN WORK.
- Stage - 4
- * **/
 
-  
+// COMP-10184 - Alarm system
+// @author - Yash Khanduja
+// @id -  000826385
+// I YASH KHANDUJA, 000826385 HERE BY DECLARE THAT THIS IS MY OWN WORK.
+// Finished - Stage 4
+
 #include <Arduino.h>
 #define PIN_PIR D5
 #define PIN_BUTTON D6
 #define TIME 100
 #define BLINK_NUM 40
-
-
-/**
- * Stage 1:
-  When motion is detected, turn the LED on solid for 10 seconds, then turn it off and wait for another motion 
-  event.
-  
- * 
-Stage 2:
- Like Stage 1, but instead of keeping the LED on solid, blink the LED for 10 seconds (4 blinks per second).
-
-Stage 3:
- Like stage 2, but after 10s, turn on the LED solid and keep it that way. Only by resetting the D1 Mini will the
- program wait for more motion events.
-
- Stage 4:
- Like stage 3, but if the pushbutton is pressed while the LED is flashing, turn the LED off and wait for another
- motion detection event.
-
-
-*/
 
 enum alarmState{
     enabled, 
@@ -42,26 +22,36 @@ long countDown = 0;
 bool previousPirState = false;
 bool lastBtnState = false;
 
+/**
+ * @param - boolean isDetected (If there is motion detected)
+*/
 void handleAlarmEnabled(bool isDetected){
     if(isDetected == true){
         isAlarmActive = countdown;
     }
 }
-
+/**
+ * If any motion is detected
+*/
 bool detectMotion(){
     bool currPirState = digitalRead(PIN_PIR) == HIGH;
     bool motion = (currPirState && !previousPirState);
     previousPirState = currPirState;
     return motion;
 }
-
+/**
+ * If the Button is pushed
+*/
 bool PushedBtn(){
     bool currBtnState = digitalRead(PIN_BUTTON) == LOW;
     bool pushed = (currBtnState && lastBtnState);
     lastBtnState = currBtnState;
     return pushed;
 }
-
+/**
+ * Set Led to ON/OFF
+ * @param boolean state (alarm state)
+*/
 void _SetLed_(bool state){
     if(state == true){
         digitalWrite(LED_BUILTIN,LOW);
@@ -71,7 +61,9 @@ void _SetLed_(bool state){
         digitalWrite(LED_BUILTIN,HIGH);
     }
 }
-
+/**
+ * Blink when there is motion is detected..
+*/
 void handleMotionDetection(){
     for(int i=0;i<BLINK_NUM;i++){
         _SetLed_(true);
@@ -85,6 +77,11 @@ void handleMotionDetection(){
     Serial.print(millis()/1000);
     Serial.println(" Seconds");
 }
+
+/**
+ * Stop light flashing, when button is pressed
+ * @param boolean btnPushed(Button is pushed)
+*/
 
 void handlebtnPressOnFlashing(bool btnPushed){
     if(countDown == 0){
