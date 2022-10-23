@@ -119,7 +119,7 @@ void setup() {
   Serial.println();
   Serial.println();
   Serial.println("=========================================");
-  Serial.println("---ALARM SYSTEM - STAGE 2---");
+  Serial.println("---ALARM SYSTEM - STAGE 4---");
   Serial.println("Yash Khanduja, 000826385");
   Serial.println("=========================================");
  
