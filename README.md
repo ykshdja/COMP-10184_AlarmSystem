@@ -1,10 +1,5 @@
-# IoT Alarm System – Stage 4
-
-**Course:** COMP-10184  
+# IoT Alarm System 
 **Author:** Yash Khanduja  
-**Student ID:** 000826385  
-
----
 
 ## Overview
 
